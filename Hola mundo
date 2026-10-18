@@ -1,14 +1,7 @@
 nom= input("Escriu el teu nom: ")
-print ("Hola " + nom)
+edat= input("A quin any vas neixer? ")
 
-num=1
-print(num)
-num=2.5
-print(num)
-num="ups"
-print(num)
+print("Hola " + nom)
+print( "En 2027 tindràs " + str(2027 - int(edat)) + " anys" )
 
-
-print ("hola mundo")
-print ("Escriu la teva edat:")
-input()
+print ("Hola mundo")
