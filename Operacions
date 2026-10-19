@@ -1,1 +1,13 @@
+num1= input("Escriu un número")
+num2= input("Escriu un altre número")
 
+print("La suma és: " + str(int(num1) + int(num2)))
+print("La resta és: " + str(int(num1) - int(num2)))
+print("L'altre resta és: " + str(int(num2) - int(num1)))
+print("La multiplicació és: " + str(int(num1) * int(num2)))
+print("La divisió és: " + str(int(num1) / int(num2)))
+print("L'altre divisió és: " + str(int(num2) / int(num1)))
+print("El residu és: " + str(int(num1) % int(num2)))
+print("La potència és: " + str(int(num1) ** int(num2)))
+print("La divisió entera és: " + str(int(num1) // int(num2)))
+print("L'altre divisió entera és: " + str(int(num2) // int(num1)))
