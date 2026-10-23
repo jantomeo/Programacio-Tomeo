@@ -1,1 +1,19 @@
+print("")
 
+#numeros
+n1= int(input("Escriu un número"))
+n2= int(input("Escriu un altre número"))
+suma= n1+n2
+
+if(suma>10): {
+    print("La suma és més gran que 10")
+} 
+else: {
+    print("La suma és més petita que 10")
+}
+
+if(suma>8 or suma<4): {
+    print("La suma és més gran que 8 o méspetita que 4")
+}
+    
+print("")
