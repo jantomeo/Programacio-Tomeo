@@ -28,10 +28,12 @@ print(num)
 num=num+1
 print(num)
 
-print("El primer número és: " + str(num1))
-print("El segon número és: " + str(num2))
-aux=num1 #variable auxiliar
-num1=num2
-num2=aux
-print("Ara el primer número és: " + str(num2))
-print("Ara el segon número és: " + str(num1))
+num=1
+num3=2
+print("El primer número és: " + str(num))
+print("El segon número és: " + str(num3))
+aux=num #variable auxiliar
+num=num3
+num3=aux
+print("Ara el primer número és: " + str(num))
+print("Ara el segon número és: " + str(num3))
