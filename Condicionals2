@@ -4,10 +4,12 @@ n1=int(input("Escriu un número: "))
 n2=int(input("Escriu un altre número: "))
 suma=n1+n2
 
+print("")
+
 operacio=input("Que vols fer amb aquests numeros? Escriu 'suma', 'resta', 'multiplicació' , 'divisió' , 'potencia' , 'modul' o 'divisio entera': ")
 
 if operacio=="suma":
-    
+
     input("Vols fer n1+n2 o n2+n1? Escriu 'n1+n2' o 'n2+n1': ")
     if input=="n1+n2":
             print("La suma és: ", str(n1+n2))
@@ -15,8 +17,11 @@ if operacio=="suma":
             print("La suma és: ", str(n2+n1))
 
 elif operacio=="resta":
-        print("La resta és: ", str(n1-n2))
-        print("L'altre resta és: ", str(n2-n1))
+        input("Vols fer n1-n2 o n2-n1? Escriu 'n1-n2' o 'n2-n1': ")
+        if input=="n1-n2":
+            print("La resta és: ", str(n1-n2))
+        else:
+            print("La resta és: ", str(n2-n1))
 
 elif operacio=="multiplicació":
       print("La multiplicació és:", str(n1*n2))
@@ -24,23 +29,35 @@ elif operacio=="multiplicació":
 elif operacio=="divisió":
     if n2==0:
         print("No es pot dividir entre 0")
-    else:
+    input("Vols fer n1/n2 o n2/n1? Escriu 'n1/n2' o 'n2/n1': ")
+    if input=="n1/n2":
         print("La divisió és: ", str(n1/n2))
+    else:
+        print("La divisió és: ", str(n2/n1))
 
 elif operacio=="potencia":
-    print("El primer número elevat a la potència és: ", str(n1**2))
-    print("El segon número elevat a la potència és: ", str(n2**2))
+    input("Vols fer n1^2 o n2^2? Escriu 'n1^2' o 'n2^2': ")
+    if input=="n1^2":
+        print("El primer número elevat a la potència és: ", str(n1**2))
+    else:
+        print("El segon número elevat a la potència és: ", str(n2**2))
 
 elif operacio=="modul":
     if n2==0:
         print("No es pot calcular el mòdul entre 0")
-    else:
+    input("Vols fer n1%n2 o n2%n1? Escriu 'n1%n2' o 'n2%n1': ")
+    if input=="n1%n2":
         print("El mòdul és: ", str(n1%n2))
+    else:
+        print("El mòdul és: ", str(n2%n1))
 
 elif operacio=="divisio entera":
     if n2==0:
         print("No es pot fer la divisió entera entre 0")
-    else:
+    input("Vols fer n1//n2 o n2//n1? Escriu 'n1//n2' o 'n2//n1': ")
+    if input=="n1//n2":
         print("La divisió entera és: ", str(n1//n2))
+    else:
+        print("La divisió entera és: ", str(n2//n1))
 
 else: print("Operació no vàlida")
