@@ -4,11 +4,16 @@ n1=int(input("Escriu un número: "))
 n2=int(input("Escriu un altre número: "))
 suma=n1+n2
 
-operacio=input("Que vols fer amb aquests numeros? Escriu 'suma', 'resta', 'multiplicació' , 'divisió' , 'elevar al cuadrat' , 'modul' o 'divisio entera': ")
+operacio=input("Que vols fer amb aquests numeros? Escriu 'suma', 'resta', 'multiplicació' , 'divisió' , 'potencia' , 'modul' o 'divisio entera': ")
 
 if operacio=="suma":
-    print("La suma és: ", str(suma))
     
+    input("Vols fer n1+n2 o n2+n1? Escriu 'n1+n2' o 'n2+n1': ")
+    if input=="n1+n2":
+            print("La suma és: ", str(n1+n2))
+    else:
+            print("La suma és: ", str(n2+n1))
+
 elif operacio=="resta":
         print("La resta és: ", str(n1-n2))
         print("L'altre resta és: ", str(n2-n1))
@@ -22,15 +27,16 @@ elif operacio=="divisió":
     else:
         print("La divisió és: ", str(n1/n2))
 
-elif operacio=="elevar al cuadrat":
-    print("El primer número elevat al cuadrat és: ", str(n1**2))
-    print("El segon número elevat al cuadrat és: ", str(n2**2))
+elif operacio=="potencia":
+    print("El primer número elevat a la potència és: ", str(n1**2))
+    print("El segon número elevat a la potència és: ", str(n2**2))
 
 elif operacio=="modul":
     if n2==0:
         print("No es pot calcular el mòdul entre 0")
     else:
         print("El mòdul és: ", str(n1%n2))
+
 elif operacio=="divisio entera":
     if n2==0:
         print("No es pot fer la divisió entera entre 0")
