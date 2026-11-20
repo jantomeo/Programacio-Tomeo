@@ -1,1 +1,64 @@
+import random
 
+colors=["V","B","G","E","T","L"]
+longitud=4
+intents=10
+
+secret=[]
+for i in range(longitud):
+    secret.append(random.choice(colors))
+
+print("")
+print("Benvingut al joc de Mastermind!")
+print("Els colors disponibles són: V (Vermell), B (Blau), G (Groc), E (Verd), T (Taronja), L (Lila).")
+print("Les pistes es donen com a 'X' per a un color correcte en la posició correcta, 'O' per a un color correcte en la posició incorrecta, i '·' per a un color incorrecte.")
+print("Tens", intents, "intents per endevinar el codi secret.\n")
+
+intentactual=1
+guanyat=False
+while intentactual<=intents and not guanyat:
+    entrada=False
+    while not entrada:
+        jugada=input(f"Intent {intentactual}/{intents}: Introdueix la teva jugada (4 colors): ").upper()
+        if len(jugada) != longitud:
+            print("Entrada no vàlida. Assegura't d'introduir exactament 4 colors vàlids.")
+
+        else:
+            entrada=True
+            for i in range(longitud):
+                if jugada[i] not in colors:
+                    entrada=False
+                    print("Entrada no vàlida. Assegura't d'introduir només colors vàlids.")
+
+    if entrada:
+        pistes = ["·"] * longitud
+        secret_usat=[False] * longitud
+        jugaada_avaluada=[False] * longitud
+
+        for i in range(longitud):
+            if secret[i] == jugada[i]:
+                pistes[i] = "X"
+                secret_usat[i] = True
+                jugaada_avaluada[i] = True
+
+        for i in range(longitud):
+            if not jugaada_avaluada[i]:
+                trobat=False
+                for j in range(longitud):
+                    if not trobat and not  secret_usat[j] and jugada[i] == secret[j]:
+                        pistes[i] = "O"
+                        secret_usat[j] = True
+                        trobat = True
+
+        print("Jugada:", jugada, "Pistes:", "".join(pistes),"\n")
+        if pistes == ["X"] * longitud:
+            guanyat=True
+        else:
+            intentactual += 1
+
+if guanyat:
+    print("Felicitats! Has endevinat el codi secret en ", intentactual, "intents.")
+else:
+    print("Ho sentim, has esgotat els intents. El codi secret era:", "".join(secret))
+
+print("")
